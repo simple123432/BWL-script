@@ -146,5 +146,5 @@ local Button = VTab:CreateButton({
         }
         
         game:GetService("ReplicatedStorage").GameEvents.CarSpawn:FireServer(unpack(args))-- The function that takes place when the button is pressed
-	end,
+   end,
 })
