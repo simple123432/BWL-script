@@ -22,7 +22,7 @@ local Window = Rayfield:CreateWindow({
 		FileName = "BWL Key",
 		SaveKey = false,
 		GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-		Key = "DsV1jKtWa"
+		Key = "HgfvN5sL2hN"
 	}
 })
 
@@ -89,6 +89,17 @@ local Button = TTab:CreateButton({
 	end,
 })
 
+-- KSP
+local Button = TTab:CreateButton({
+	Name = "KSP",
+	Callback = function()
+		local args = {
+            [1] = "Citizens"
+        }
+        
+        game:GetService("ReplicatedStorage").GameEvents.TeamChangeRemote:FireServer(unpack(args))-- The function that takes place when the button is pressed
+	end,
+})
 
 
 
@@ -148,6 +159,67 @@ local Button = VTab:CreateButton({
         game:GetService("ReplicatedStorage").GameEvents.CarSpawn:FireServer(unpack(args))-- The function that takes place when the button is pressed
 	end,
 })
+-- Trolling
+local TRTab = Window:CreateTab("Trolling") -- Title, Image
+local Section = TRTab:CreateSection("USE AT YOUR OWN RISK")
+
+local Button = TRTab:CreateButton({
+	Name = " call sign (69)",
+	Callback = function()
+		local args = {
+            [1] = true,
+            [2] = "69"
+        }
+        
+        game:GetService("ReplicatedStorage").RadioEvents.getCS:InvokeServer(unpack(args))-- The function that takes place when the button is pressed
+	end,
+})
+
+local Button = TRTab:CreateButton({
+	Name = " call sign (420)",
+	Callback = function()
+		local args = {
+            [1] = true,
+            [2] = "420"
+        }
+        
+        game:GetService("ReplicatedStorage").RadioEvents.getCS:InvokeServer(unpack(args))-- The function that takes place when the button is pressed
+	end,
+})
+
+local Button = TRTab:CreateButton({
+	Name = " call sign (STAFF)",
+	Callback = function()
+		local args = {
+            [1] = true,
+            [2] = "STAFF"
+        }
+        
+        game:GetService("ReplicatedStorage").RadioEvents.getCS:InvokeServer(unpack(args))-- The function that takes place when the button is pressed
+	end,
+})
+
+local Button = TRTab:CreateButton({
+	Name = " call sign (&&&)",
+	Callback = function()
+		local args = {
+            [1] = true,
+            [2] = "&&&"
+        }
+        
+        game:GetService("ReplicatedStorage").RadioEvents.getCS:InvokeServer(unpack(args))-- The function that takes place when the button is pressed
+	end,
+})
+
+
+
+
+
+
+
+
+
+
 -- Player
 local PTab = Window:CreateTab("Player") -- Title, Image
 local Button = PTab:CreateButton({
