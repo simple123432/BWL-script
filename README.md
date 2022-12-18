@@ -1,1 +1,1 @@
-Yeah ima update it everytime something is patched or somethign new i have exploited.
+Yeah I will update it everytime I have made a new exploit for the game or if something is patched.
