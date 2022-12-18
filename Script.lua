@@ -22,7 +22,7 @@ local Window = Rayfield:CreateWindow({
 		FileName = "BWL Key",
 		SaveKey = false,
 		GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-		Key = "HgfvN5sL2hN"
+		Key = "TyCe3ksW"
 	}
 })
 
@@ -111,7 +111,7 @@ local Button = TTab:CreateButton({
 
 local WTab = Window:CreateTab("Weapons/Items") -- Title, Image
 local Section = WTab:CreateSection("Weapons")
--- Taser
+
 local Button = WTab:CreateButton({
 	Name = "Reload Taser",
 	Callback = function()
@@ -211,7 +211,22 @@ local Button = TRTab:CreateButton({
 	end,
 })
 
+-- spam calls 
 
+local Button = TRTab:CreateButton({
+	Name = "spams Police calls ",
+	Callback = function()
+        local args = {
+            [1] = "NewCall",
+            [2] = "LEO",
+            [3] = "mhm yummy lol xx",
+            [4] = "oiled up lil nas x",
+            [5] = "301"
+        }
+        
+        game:GetService("ReplicatedStorage").RadioEvents.activeCalls:FireServer(unpack(args))-- The function that takes place when the button is pressed
+	end,
+})
 
 
 
@@ -236,26 +251,7 @@ local Button = PTab:CreateButton({
 	end,
 })
 
-local Button = PTab:CreateButton({
-	Name = "Fly",
-	Callback = function()
-		getgenv().speed_owo = 100; -- Choose your fly speed
-getgenv().fly = true; -- Set to false to only gain walk speed
 
-function spoof(seso, value)
-    spawn(function ()
-        local gmt = getrawmetatable(game);
-        setreadonly(gmt, false);
-        local oldindex = gmt.__index;
-        gmt.__index = newcclosure(function (self,b)
-            if b == seso then
-                return value;
-            end
-        return oldindex(self, b);
-    end)
-    setreadonly(gmt, true);
-end)
-end
 
 
 function killkick()
@@ -314,9 +310,6 @@ function main()
     end)
 end
 
-main();-- The function that takes place when the button is pressed
-	end,
-})
 
 
 
